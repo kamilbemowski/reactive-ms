@@ -7,12 +7,12 @@ import pl.bemowski.ms.router.handler.PassangerRequestHandler;
 
 public class Starter extends AbstractVerticle {
 
+
     @Override
     public void start() throws Exception {
         Router router = Router.router(vertx);
-        router.route(HttpMethod.PUT, "passengers").handler(
-                new PassangerRequestHandler(vertx)
-        );
-        httpServer.listen(8012);
+        PassangerRequestHandler passengerHandler = new PassangerRequestHandler(vertx);
+        router.route(HttpMethod.PUT, "/passengers").handler(passengerHandler::handle);
+        vertx.createHttpServer().requestHandler(router).listen(8012);
     }
 }
