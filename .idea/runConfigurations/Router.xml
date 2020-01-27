@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Router" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="io.vertx.core.Launcher" />
+    <module name="router" />
+    <option name="PROGRAM_PARAMETERS" value="run pl.bemowski.ms.router.Starter -cluster" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
