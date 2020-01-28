@@ -7,6 +7,6 @@
 PUT http://localhost:8012/passengers
 Accept: application/json
 
-{ "flight": AA1231, "date": 11/11/2020 "firstName": "Jan", "lastName", "Kowalski", "status", "NEW" }
+{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Jan", "lastName": "Kowalski", "status": "NEW" }
 
 ###

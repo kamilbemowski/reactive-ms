@@ -1,27 +1,23 @@
 package pl.bemowski.ms.passenger.handler;
 
-import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.Message;
-import io.vertx.core.json.JsonObject;
+import io.vertx.core.json.Json;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
-import io.vertx.ext.jdbc.JDBCClient;
-import io.vertx.ext.sql.SQLClient;
+import pl.bemowski.ms.common.model.PassangerEvent;
+import pl.bemowski.ms.database.passanger.PassangerStorage;
 
 public class PassengersHandler {
-    private final Vertx vertx;
     private Logger logger = LoggerFactory.getLogger(PassengersHandler.class);
+    private PassangerStorage passengerStorage;
 
-    public PassengersHandler(Vertx vertx) {
-        this.vertx = vertx;
+    public PassengersHandler(PassangerStorage passengerStorage) {
+        this.passengerStorage = passengerStorage;
     }
 
-    public void handle(Message<Object> message) {
+    public void handle(Message<String> message) {
         logger.info("Handle message");
-        JsonObject config = new JsonObject();
-        SQLClient client = JDBCClient.createShared(vertx, config, "jdbc:h2:~/test");
-        client.call("Select 1", handler -> {
-            logger.info(handler.result());
-        });
+        PassangerEvent passangerEvent = Json.decodeValue(message.body(), PassangerEvent.class);
+        passengerStorage.save(passangerEvent);
     }
 }

@@ -14,8 +14,8 @@ public class PassangerRequestHandler {
     }
 
     public void handle(RoutingContext event) {
-        event.request().handler(h -> {
-            String body = new String(h.getBytes());
+        event.request().handler(message -> {
+            String body = new String(message.getBytes());
             logger.info("Passenger event " + body + " event " + event);
             vertx.eventBus().publish("passengers", body);
         });
