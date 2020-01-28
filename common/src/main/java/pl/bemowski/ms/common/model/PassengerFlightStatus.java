@@ -1,5 +1,5 @@
 package pl.bemowski.ms.common.model;
 
 public enum PassengerFlightStatus {
-    NEW
+    NEW, CHECK_IN, SECURITY, GATE
 }

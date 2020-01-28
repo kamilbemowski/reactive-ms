@@ -6,11 +6,10 @@ import lombok.Data;
 import pl.bemowski.ms.common.json.LocalDateDeserializer;
 import pl.bemowski.ms.common.json.LocalDateSerializer;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
-public class PassangerEvent implements Serializable {
+public class PassengerEvent implements Key {
     private Long id;
     private String firstName;
     private String lastName;
@@ -21,7 +20,8 @@ public class PassangerEvent implements Serializable {
     private LocalDate date;
     private PassengerFlightStatus status;
 
-    public String getKey() {
+    @Override
+    public String key() {
         return firstName + lastName + flight + date.toString();
     }
 }

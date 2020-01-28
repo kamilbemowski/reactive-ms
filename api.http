@@ -7,6 +7,40 @@
 PUT http://localhost:8012/passengers
 Accept: application/json
 
-{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Jan", "lastName": "Kowalski", "status": "NEW" }
+[
+{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Jan", "lastName": "Kowalski", "status": "NEW" },
+{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Marian", "lastName": "Kowalski", "status": "NEW" },
+{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Krystian", "lastName": "Kowalski", "status": "NEW" },
+{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Paweł", "lastName": "Kowalski", "status": "NEW" },
+{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Piotr", "lastName": "Kowalski", "status": "NEW" },
+{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Włodzimierz", "lastName": "Nowak", "status": "NEW" }
+]
 
 ###
+
+PUT http://localhost:8012/passengers
+Accept: application/json
+
+[{ "flight": "AA1231", "date": "2020-11-11", "firstName": "Jan", "lastName": "Kowalski", "status": "NEW" }]
+
+###
+
+PUT http://localhost:8012/airlines
+Accept: application/json
+
+{"name": "Polskie Linie Lotnicze LOT", "abbreviation": "LO"}
+
+###
+
+PUT http://localhost:8012/flight
+Accept: application/json
+
+{"flightNumber": "LO24", "date": "2020-01-22", "destination": "Paris", "type": "PASSANGER", "direction": "FROM"}
+
+###
+
+PUT http://localhost:8012/flight
+Accept: application/json
+
+{"flightNumber": "LO26", "date": "2020-01-22", "destination": "London", "type": "PASSANGER", "direction": "TO"}
+

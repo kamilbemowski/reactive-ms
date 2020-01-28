@@ -7,7 +7,7 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
-import pl.bemowski.ms.common.model.PassangerEvent;
+import pl.bemowski.ms.common.model.PassengerEvent;
 
 import java.util.Set;
 
@@ -19,8 +19,8 @@ public class Runner extends AbstractVerticle {
         logger.info("Start");
         Set<HazelcastInstance> allHazelcastInstances = Hazelcast.getAllHazelcastInstances();
         HazelcastInstance next = allHazelcastInstances.iterator().next();
-        IMap<Long, PassangerEvent> passangers = next.getMap("passangers");
-        passangers.put(1L, new PassangerEvent());
+        IMap<Long, PassengerEvent> passangers = next.getMap("passangers");
+        passangers.put(1L, new PassengerEvent());
         logger.info("Passengers maps: " + passangers.size());
         fut.fail("End");
     }
