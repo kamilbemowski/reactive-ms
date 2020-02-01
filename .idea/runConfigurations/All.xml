@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All" type="Multirun" factoryName="Multirun" separateTabs="true" startOneByOne="false" markFailedProcess="true" hideSuccessProcess="false" delayTime="0">
+    <runConfiguration name="Router" type="Application" />
+    <runConfiguration name="Passenger" type="Application" />
+    <runConfiguration name="Airline" type="Application" />
+    <runConfiguration name="Flight" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>
