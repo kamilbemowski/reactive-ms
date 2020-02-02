@@ -4,6 +4,7 @@
     <runConfiguration name="Passenger" type="Application" />
     <runConfiguration name="Airline" type="Application" />
     <runConfiguration name="Flight" type="Application" />
+    <runConfiguration name="Schedule" type="Application" />
     <method v="2" />
   </configuration>
 </component>

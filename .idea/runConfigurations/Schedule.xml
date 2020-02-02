@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Schedule" type="Application" factoryName="Application" singleton="false">
+    <option name="MAIN_CLASS_NAME" value="io.vertx.core.Launcher" />
+    <module name="schedule" />
+    <option name="PROGRAM_PARAMETERS" value="run pl.bemowski.ms.schedule.ScheduleRunner -cluster" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -5,10 +5,11 @@ import io.vertx.core.json.Json;
 import pl.bemowski.ms.common.model.FlightEvent;
 import pl.bemowski.ms.database.flight.FlightStorage;
 
-public class FlightHandler {
+public class FlightEventHandler {
+
     private final FlightStorage flightStorage;
 
-    public FlightHandler(FlightStorage flightStorage) {
+    public FlightEventHandler(FlightStorage flightStorage) {
         this.flightStorage = flightStorage;
     }
 

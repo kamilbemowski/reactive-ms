@@ -19,7 +19,7 @@
     </modules>
 
     <properties>
-        <vertx.version>3.8.4</vertx.version>
+        <vertx.version>3.8.5</vertx.version>
         <log4j.version>2.11.1</log4j.version>
     </properties>
 
