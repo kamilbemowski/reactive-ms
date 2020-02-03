@@ -16,6 +16,8 @@
         <module>airline</module>
         <module>schedule</module>
         <module>database</module>
+        <module>timetable</module>
+        <module>gateway</module>
     </modules>
 
     <properties>

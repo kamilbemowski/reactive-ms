@@ -22,6 +22,6 @@ public class PassengerEvent implements Key {
 
     @Override
     public String key() {
-        return firstName + lastName + flight + date.toString();
+        return flight + date.toString();
     }
 }

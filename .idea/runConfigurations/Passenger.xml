@@ -3,8 +3,6 @@
     <option name="MAIN_CLASS_NAME" value="io.vertx.core.Launcher" />
     <module name="passenger" />
     <option name="PROGRAM_PARAMETERS" value="run pl.bemowski.ms.passenger.PassengerStarter -cluster" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
+    <method v="2" />
   </configuration>
 </component>

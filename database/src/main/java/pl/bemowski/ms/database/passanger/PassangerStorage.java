@@ -1,23 +1,22 @@
 package pl.bemowski.ms.database.passanger;
 
 import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.IMap;
+import com.hazelcast.core.MultiMap;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import pl.bemowski.ms.common.model.PassengerEvent;
 
 public class PassangerStorage {
-    private final HazelcastInstance hazelcast;
     private Logger logger = LoggerFactory.getLogger(PassangerStorage.class);
+    private MultiMap<String, PassengerEvent> passengers;
 
     public PassangerStorage() {
-        this.hazelcast = Hazelcast.getAllHazelcastInstances().iterator().next();
+        passengers = Hazelcast.getAllHazelcastInstances().iterator().next().getMultiMap("passengers");
     }
 
     public void save(PassengerEvent event) {
         logger.info("Save passenger: " + event);
-        IMap<String, PassengerEvent> passengers = hazelcast.getMap("passengers");
-        passengers.set(event.key(), event);
+        passengers.put(event.key(), event);
     }
+
 }
