@@ -15,6 +15,13 @@ mvn clean install
 ```
 In the repository you could find run configurations which could be used in intellij idea.
 
+For another IDE here is example of configuration for runs:
+
+Main Class: io.vertx.core.Launcher
+
+program arguments: run pl.bemowski.ms.flight.FlightRunner -cluster
+
+To run multiple applications at once please install `multirun` plugin in the intellij.
 ## Features
 
 * router which receive events and send to event bus
