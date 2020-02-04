@@ -6,6 +6,8 @@ import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import pl.bemowski.ms.common.model.PassengerEvent;
 
+import java.util.Collection;
+
 public class PassangerStorage {
     private Logger logger = LoggerFactory.getLogger(PassangerStorage.class);
     private MultiMap<String, PassengerEvent> passengers;
@@ -19,4 +21,7 @@ public class PassangerStorage {
         passengers.put(event.key(), event);
     }
 
+    public Collection<PassengerEvent> getAllByFlightNumberAndDate(String flightNumber, String date) {
+        return passengers.get(flightNumber + date);
+    }
 }

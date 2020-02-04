@@ -24,7 +24,7 @@ public class Starter extends AbstractVerticle {
         router.route(HttpMethod.PUT, "/passengers").handler(passengerHandler::handle);
         router.route(HttpMethod.PUT, "/flights").handler(flightsHandler::handle);
         router.route(HttpMethod.PUT, "/airlines").handler(airlineHandler::handle);
-        vertx.createHttpServer().requestHandler(router).listen(8012);
+        vertx.createHttpServer().requestHandler(router).listen(8013);
     }
 
 
