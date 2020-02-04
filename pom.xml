@@ -19,6 +19,7 @@
         <module>timetable</module>
         <module>gateway</module>
         <module>http-common</module>
+        <module>simple-server</module>
     </modules>
 
     <properties>
