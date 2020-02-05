@@ -5,6 +5,8 @@ import io.vertx.circuitbreaker.CircuitBreakerOptions;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.http.HttpClient;
+import io.vertx.core.logging.Logger;
+import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.servicediscovery.Record;
@@ -16,6 +18,7 @@ public class GatewayStarter extends AbstractVerticle {
 
     private ServiceDiscovery discovery;
     private CircuitBreaker circuitBreaker;
+    private Logger logger = LoggerFactory.getLogger(GatewayStarter.class);
 
     @Override
     public void start(Promise<Void> startPromise) {
@@ -36,6 +39,7 @@ public class GatewayStarter extends AbstractVerticle {
                         records -> {
                             Record record = records.result();
                             if (record == null) {
+                                logger.info("Cannot find microservice");
                                 context.response().setStatusCode(404).end("Resource not found");
                             } else {
                                 ServiceReference reference = discovery.getReference(record);
@@ -43,7 +47,9 @@ public class GatewayStarter extends AbstractVerticle {
                                 new RequestDispatcher().dispatchRequest(client, context, circuitBreaker, discovery);
                             }
                         }));
+        logger.info("Starting server");
         vertx.createHttpServer().requestHandler(router).listen(8123);
+        logger.info("Server started");
         startPromise.complete();
     }
 
