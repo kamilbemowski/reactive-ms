@@ -21,19 +21,9 @@ public class FlightsRequestHandler implements RequestHandler {
             String flightMessage = buffer.toString();
             logger.info("Flight message: " + flightMessage);
             vertx.eventBus()
-                    .publish(EventBusAddresses.FLIGHT, flightMessage)
-                    .request(EventBusAddresses.SCHEDULE, flightMessage, replay -> {
-                        logger.info("schedule replay: " + replay.result());
-                        if (replay.failed()) {
-                            String message = replay.cause().getMessage();
-                            this.vertx.eventBus().publish(EventBusAddresses.DELETE_FLIGHT, flightMessage);
-                            event.response().setStatusCode(200).end(message);
-                        } else {
-                            String message = (String) replay.result().body();
-                            event.response().setStatusCode(201).end(message);
-                            vertx.eventBus().publish(EventBusAddresses.TIMETABLE, flightMessage);
-                        }
-                    });
+                    .publish(EventBusAddresses.FLIGHT, flightMessage).publish(EventBusAddresses.TIMETABLE, flightMessage);
+            event.response().setStatusCode(201).end("ok");
+
         });
     }
 }
