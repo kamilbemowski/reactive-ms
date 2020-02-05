@@ -1,0 +1,226 @@
+{
+  "info": {
+    "_postman_id": "9728fdb3-76d3-4a2e-a1c3-343849ad6510",
+    "name": "Reactive ms",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Passengers",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Jan\", \"lastName\": \"Kowalski\", \"status\": \"NEW\" },\r\n{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Marian\", \"lastName\": \"Kowalski\", \"status\": \"NEW\" },\r\n{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Krystian\", \"lastName\": \"Kowalski\", \"status\": \"NEW\" },\r\n{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Paweł\", \"lastName\": \"Kowalski\", \"status\": \"NEW\" },\r\n{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Piotr\", \"lastName\": \"Kowalski\", \"status\": \"NEW\" },\r\n{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Włodzimierz\", \"lastName\": \"Nowak\", \"status\": \"NEW\" }\r\n]"
+        },
+        "url": {
+          "raw": "http://localhost:8013/passengers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8013",
+          "path": [
+            "passengers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "passengers single",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Jan\", \"lastName\": \"Kowalski\", \"status\": \"NEW\" }]\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "[{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Jan\", \"lastName\": \"Kowalski\", \"status\": \"NEW\" }]",
+          "host": [
+            "[{ \"flight\": \"AA1231\", \"date\": \"2020-11-11\", \"firstName\": \"Jan\", \"lastName\": \"Kowalski\", \"status\""
+          ],
+          "port": " \"NEW\" }]"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Airlines",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Polskie Linie Lotnicze LOT\", \"abbreviation\": \"LO\"}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8013/airlines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8013",
+          "path": [
+            "airlines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "flights",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"flightNumber\": \"LO24\", \"date\": \"2020-01-22\", \"destination\": \"Paris\", \"type\": \"PASSANGER\", \"direction\": \"FROM\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8013/flights",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8013",
+          "path": [
+            "flights"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "flights 2",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"flightNumber\": \"LO37\", \"date\": \"2020-02-05\", \"destination\": \"London\", \"type\": \"PASSANGER\", \"direction\": \"TO\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8013/flights",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8013",
+          "path": [
+            "flights"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get passengers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "GET http://localhost:8123/passengers?flightNumber=AA1231&date=2020-11-11",
+          "protocol": "GET http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8123",
+          "path": [
+            "passengers"
+          ],
+          "query": [
+            {
+              "key": "flightNumber",
+              "value": "AA1231"
+            },
+            {
+              "key": "date",
+              "value": "2020-11-11"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "helloworld direct",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "helloworld gateway",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
