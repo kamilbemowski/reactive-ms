@@ -36,6 +36,6 @@ Accept: application/json
 PUT http://localhost:8012/flights
 Accept: application/json
 
-{"flightNumber": "LO26", "date": "2020-02-04", "destination": "London", "type": "PASSANGER", "direction": "TO"}
+{"flightNumber": "LO37", "date": "2020-02-05", "destination": "London", "type": "PASSANGER", "direction": "TO"}
 
 ###
