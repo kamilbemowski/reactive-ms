@@ -19,7 +19,7 @@ public class SimpleServerStarter extends AbstractVerticle {
         Record record = HttpEndpoint.createRecord("helloworld", "localhost", 5122, "/");
         serviceDiscovery.publish(record, result -> logger.info("Record published" + result.succeeded()));
         Router router = Router.router(vertx);
-        router.route(HttpMethod.GET, "/helloworld").handler(context -> context.response().end("Hello"));
+        router.route(HttpMethod.GET, "/helloworld").handler(context -> context.response().setStatusCode(500).end("Hello"));
         vertx.createHttpServer().requestHandler(router).listen(5122);
     }
 }

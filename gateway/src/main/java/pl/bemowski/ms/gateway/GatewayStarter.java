@@ -30,7 +30,7 @@ public class GatewayStarter extends AbstractVerticle {
                         .setMaxFailures(5)
                         .setTimeout(10000L)
                         .setFallbackOnFailure(true)
-                        .setResetTimeout(30000L));
+                        .setResetTimeout(10000L));
 
         Router router = Router.router(vertx);
         router.route().handler(BodyHandler.create());
