@@ -22,7 +22,7 @@
 
     <properties>
         <vertx.version>3.8.5</vertx.version>
-        <log4j.version>2.11.1</log4j.version>
+        <log4j.version>2.13.3</log4j.version>
     </properties>
 
     <build>
